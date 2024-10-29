@@ -1,7 +1,7 @@
 import 'package:coffee_app/Pages/color.dart';
 import 'package:coffee_app/size.dart';
 import 'package:flutter/material.dart';
-// import 'homepage.dart';
+import 'homepage.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -53,12 +53,12 @@ class _SplashState extends State<Splash> {
                   //     (Route<dynamic> route) => false
                   //   )
                   // );
-                  // Navigator.of(context).pushAndRemoveUntil(
-                  //   MaterialPageRoute(
-                  //     builder: (context) => HomePage(),
-                  //   ),
-                  //   (Route<dynamic> route) => false,
-                  // );
+                  Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(
+                      builder: (context) => HomePage(),
+                    ),
+                    (Route<dynamic> route) => false,
+                  );
                 },
                 child: Container(
                   alignment: Alignment.center,

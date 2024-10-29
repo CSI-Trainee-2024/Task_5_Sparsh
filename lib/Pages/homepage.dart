@@ -16,9 +16,43 @@ class _HomepageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+          appBar: AppBar(
+            elevation: 0,
+            backgroundColor: Colors.red,
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+            
+            items : [
+              BottomNavigationBarItem(icon: Icon(Icons.home),
+              label : "",
+              ),
+
+              BottomNavigationBarItem(icon: Icon(Icons.favorite),
+              label : "",
+              ),
+
+              BottomNavigationBarItem(icon: Icon(Icons.shop),
+              label : "",
+              ),
+
+              BottomNavigationBarItem(icon: Icon(Icons.notification_add),
+              label : "",
+              ),
+
+              BottomNavigationBarItem(icon: Icon(Icons.person),
+              label : "",
+              ),
+              
+
+            ]
+          ),
       body: SingleChildScrollView(
+        
+        
         padding: const EdgeInsets.all(30),
         child: Column(
+          
+
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Row(
@@ -111,6 +145,20 @@ class _HomepageState extends State<HomePage> {
                     )
                 ],
               ),
+            ),
+
+            Row(
+              children: [
+            
+                Column(
+                  children: [
+                     Image.asset("assets/coffee.jpg"),
+
+                     
+                  ]
+                     
+                )
+              ],
             )
 
 
