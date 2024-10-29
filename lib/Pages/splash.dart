@@ -1,7 +1,7 @@
 import 'package:coffee_app/Pages/color.dart';
 import 'package:coffee_app/size.dart';
 import 'package:flutter/material.dart';
-import 'homepage.dart';
+// import 'homepage.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -30,7 +30,7 @@ class _SplashState extends State<Splash> {
                     "Stay Focused",
                     style: TextStyle(
                       fontSize: screenWidth * 0.08,
-                      color: blackColor,
+                      color: textColor,
                     ),
                   ),
                   SizedBox(
@@ -40,7 +40,7 @@ class _SplashState extends State<Splash> {
                       "Get the cup filled of your choice to stay focused and awake. Diffrent type of coffee menu, hot lottee cappucino",
                       style: TextStyle(
                         fontSize: screenWidth * 0.05,
-                        color: blackColor,
+                        color: text2Color,
                       ))
                 ],
               ),
@@ -53,19 +53,19 @@ class _SplashState extends State<Splash> {
                   //     (Route<dynamic> route) => false
                   //   )
                   // );
-                  Navigator.of(context).pushAndRemoveUntil(
-                    MaterialPageRoute(
-                      builder: (context) => HomePage(),
-                    ),
-                    (Route<dynamic> route) => false,
-                  );
+                  // Navigator.of(context).pushAndRemoveUntil(
+                  //   MaterialPageRoute(
+                  //     builder: (context) => HomePage(),
+                  //   ),
+                  //   (Route<dynamic> route) => false,
+                  // );
                 },
                 child: Container(
                   alignment: Alignment.center,
                   width: screenWidth * 0.9,
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                      color: blackColor,
+                      color: buttonColor,
                       borderRadius: BorderRadius.circular(10)),
                   child: const Text("Dive in ",
                       style: TextStyle(fontSize: 20, color: Colors.white)),

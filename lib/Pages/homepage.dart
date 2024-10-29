@@ -71,37 +71,50 @@ class _HomepageState extends State<HomePage> {
                height: screenHeight*0.02,
             ),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Container(
-                  padding: EdgeInsets.all(5),
-                  color: Colors.red,
-                  child: Text("Espresso",
-                  style: TextStyle(fontSize: screenWidth * 0.05, color: blackColor),)
-                  ),
-                  
-                Container(
-                  padding: EdgeInsets.all(5),
-                  child: Text("Latte",
-                  style: TextStyle(fontSize: screenWidth * 0.05, color: blackColor),)
-                  ),
-                  
-                Container(
-                  padding: EdgeInsets.all(5),
-                  child: Text("Cappuccino",
-                  style: TextStyle(fontSize: screenWidth * 0.05, color: blackColor),)
-                  ),
-                  
-                Container(
-                  padding: EdgeInsets.all(5),
-                  child: Text("Cafetiere",
-                  style: TextStyle(fontSize: screenWidth * 0.05, color: blackColor),)
-                  )
-              ],
+            // ListView.separated(itemBuilder: (context, index){
+            //   return Container();
+            // }, separatorBuilder: (context, i){
+            //   return SizedBox(width: 10);
+            // }, itemCount: 10),
+
+            Container(
+              height: screenWidth * 0.1,
+              alignment: Alignment.center,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      border: Border(bottom: BorderSide(color: Colors.red))
+                    ),
+                    child: Text("Espresso",
+                    style: TextStyle(fontSize: screenWidth * 0.05, color: blackColor),)
+                    ),
+                    
+                  Container(
+                    padding: EdgeInsets.all(5),
+                    child: Text("Latte",
+                    style: TextStyle(fontSize: screenWidth * 0.05, color: blackColor),)
+                    ),
+                    
+                  Container(
+                    padding: EdgeInsets.all(5),
+                    child: Text("Cappuccino",
+                    style: TextStyle(fontSize: screenWidth * 0.05, color: blackColor),)
+                    ),
+                    
+                  Container(
+                    padding: EdgeInsets.all(5),
+                    child: Text("Cafetiere",
+                    style: TextStyle(fontSize: screenWidth * 0.05, color: blackColor),)
+                    )
+                ],
+              ),
             )
 
-            
+
+
 
 
           ],
