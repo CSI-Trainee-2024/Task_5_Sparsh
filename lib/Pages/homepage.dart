@@ -72,25 +72,36 @@ class _HomepageState extends State<HomePage> {
             ),
 
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Flexible(
+                Container(
+                  padding: EdgeInsets.all(5),
+                  color: Colors.red,
                   child: Text("Espresso",
                   style: TextStyle(fontSize: screenWidth * 0.05, color: blackColor),)
                   ),
-                Flexible(
+                  
+                Container(
+                  padding: EdgeInsets.all(5),
                   child: Text("Latte",
                   style: TextStyle(fontSize: screenWidth * 0.05, color: blackColor),)
                   ),
-                Flexible(
-                  child: Text("Espresso",
+                  
+                Container(
+                  padding: EdgeInsets.all(5),
+                  child: Text("Cappuccino",
                   style: TextStyle(fontSize: screenWidth * 0.05, color: blackColor),)
                   ),
-                Flexible(
-                  child: Text("Espresso",
+                  
+                Container(
+                  padding: EdgeInsets.all(5),
+                  child: Text("Cafetiere",
                   style: TextStyle(fontSize: screenWidth * 0.05, color: blackColor),)
                   )
               ],
             )
+
+            
 
 
           ],
