@@ -17,13 +17,23 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
- List<CoffeeModel> coffees = [
-    CoffeeModel(image:"assets/coffee.jpg" , coffeeType: "Expresso", coffeeDesc: "With milk", price:"\$4.20" ),
-    CoffeeModel(image:"assets/coffee.jpg" , coffeeType: "Expresso", coffeeDesc: "With milk", price:"\$4.20" ),
-    CoffeeModel(image:"assets/coffee.jpg" , coffeeType: "Expresso", coffeeDesc: "With milk", price:"\$4.20" )
- ];
-
+  List<CoffeeModel> coffees = [
+    CoffeeModel(
+        image: "assets/coffee.jpg",
+        coffeeType: "Expresso",
+        coffeeDesc: "With milk",
+        price: "\$4.20"),
+    CoffeeModel(
+        image: "assets/coffee.jpg",
+        coffeeType: "Expresso",
+        coffeeDesc: "With milk",
+        price: "\$4.20"),
+    CoffeeModel(
+        image: "assets/coffee.jpg",
+        coffeeType: "Expresso",
+        coffeeDesc: "With milk",
+        price: "\$4.20")
+  ];
 
   List<String> coffeeTypes = ["Espresso", "Latte", "Cappuccino", "Cafetiere"];
   int selectedCoffeeType = 0;
@@ -123,26 +133,22 @@ class _HomeState extends State<Home> {
                 },
                 itemCount: coffeeTypes.length),
           ),
-
-
           Container(
-            // height: screenHeight * 0.2,
-            child: IntrinsicHeight(
-              child: ListView.separated(
+            height: screenHeight * 0.29,
+            child: ListView.separated(
+                // shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (context , index){
-                return CoffeeCard();
-              },
-               separatorBuilder: (context , index){
-                return SizedBox(
-                        width: screenWidth * 0.08,
-                      );
-                
-               },
+                itemBuilder: (context, index) {
+                  return CoffeeCard();
+                },
+                separatorBuilder: (context, index) {
+                  return SizedBox(
+                    width: screenWidth * 0.08,
+                  );
+                },
                 itemCount: 10),
-            ),
           )
-          ],
+        ],
       ),
     );
   }
