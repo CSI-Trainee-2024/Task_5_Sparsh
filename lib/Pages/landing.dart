@@ -4,6 +4,7 @@ import 'package:coffee_app/Pages/notifications.dart';
 import 'package:coffee_app/Pages/profile.dart';
 import 'package:coffee_app/Pages/shopping.dart';
 import 'package:coffee_app/constants/color.dart';
+import 'package:coffee_app/constants/size.dart';
 import 'package:flutter/material.dart';
 
 class Landing extends StatefulWidget {
@@ -42,12 +43,15 @@ class _LandingState extends State<Landing> {
         child: Scaffold(
       appBar: AppBar(
           elevation: 0,
-          // backgroundColor: Colors.red,
-          leading: const Icon(Icons.menu),
-          actions: const [
+          backgroundColor: Colors.transparent,
+          leading: Padding(
+            padding:  EdgeInsets.only(left: screenWidth * 0.1),
+            child: const Icon(Icons.menu),
+          ),
+          actions: [
             Padding(
-              padding: EdgeInsets.only(right: 20),
-              child: Icon(Icons.person),
+              padding: EdgeInsets.only(right: screenWidth * 0.1),
+              child: const Icon(Icons.person),
             )
           ]),
       body: _getBody(),
