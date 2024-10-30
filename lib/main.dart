@@ -1,5 +1,5 @@
 import 'package:coffee_app/Pages/splash.dart';
-import 'package:coffee_app/size.dart';
+import 'package:coffee_app/constants/size.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        brightness: Brightness.dark,
+        scaffoldBackgroundColor: Color(0xff1A1C29)
       ),
       home: const Splash(),
     );

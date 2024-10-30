@@ -1,7 +1,8 @@
-import 'package:coffee_app/Pages/color.dart';
-import 'package:coffee_app/size.dart';
+import 'package:coffee_app/constants/color.dart';
+import 'package:coffee_app/Pages/landing.dart';
+import 'package:coffee_app/constants/size.dart';
 import 'package:flutter/material.dart';
-import 'homepage.dart';
+import 'home.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -17,7 +18,6 @@ class _SplashState extends State<Splash> {
       child: Scaffold(
         body: Container(
           padding: const EdgeInsets.all(30),
-          color: backgroundColor,
           height: screenHeight,
           width: screenWidth,
           child: Column(
@@ -25,12 +25,13 @@ class _SplashState extends State<Splash> {
             children: [
               Image.asset("assets/coffee.jpg"),
               Column(
+          
                 children: [
                   Text(
                     "Stay Focused",
                     style: TextStyle(
                       fontSize: screenWidth * 0.08,
-                      color: textColor,
+                      color: whiteColor,
                     ),
                   ),
                   SizedBox(
@@ -40,7 +41,7 @@ class _SplashState extends State<Splash> {
                       "Get the cup filled of your choice to stay focused and awake. Diffrent type of coffee menu, hot lottee cappucino",
                       style: TextStyle(
                         fontSize: screenWidth * 0.05,
-                        color: text2Color,
+                        color: greyColor,
                       ))
                 ],
               ),
@@ -55,7 +56,7 @@ class _SplashState extends State<Splash> {
                   // );
                   Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(
-                      builder: (context) => HomePage(),
+                      builder: (context) => Landing(),
                     ),
                     (Route<dynamic> route) => false,
                   );
@@ -65,7 +66,7 @@ class _SplashState extends State<Splash> {
                   width: screenWidth * 0.9,
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                      color: buttonColor,
+                      color: brownColor,
                       borderRadius: BorderRadius.circular(10)),
                   child: const Text("Dive in ",
                       style: TextStyle(fontSize: 20, color: Colors.white)),
