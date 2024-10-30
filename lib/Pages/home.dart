@@ -114,20 +114,36 @@ class _HomeState extends State<Home> {
           ),
           Container(
             padding: EdgeInsets.all(10),
-            color: Colors.red,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+              color: plateColor,
+
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
+                  height: screenWidth * 0.3,
+                  width: screenWidth * 0.3,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(100)
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(20),
+                    image: DecorationImage(image: AssetImage("assets/coffee.jpg"))
                   ),
-                  child: Image.asset("assets/coffee.jpg")),
+                  // child: Image.asset("assets/coffee.jpg")
+                  ),
                 SizedBox(
-                  height: screenHeight * 0.05,
+                  height: screenHeight * 0.03,
                 ),
                 Text("Expresso"),
-                Text("With Oat Milk")
+                Text("With Oat Milk"),
+                SizedBox(
+                  height: screenHeight * 0.03,
+                ),
+                Text("\$4.20")
+
+
+
               ],
             ),
           )

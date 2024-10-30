@@ -8,4 +8,5 @@ const text2Color = Color(0xff444444);
 const greyColor = Colors.grey;
 const blackColor = Colors.black;
 const bottomnavigationColor = Color(0xff2F3548);
+const plateColor = Color(0xff2F3548);
 const whiteColor = Colors.white;
