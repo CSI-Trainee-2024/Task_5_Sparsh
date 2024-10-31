@@ -5,12 +5,15 @@ import 'package:flutter/material.dart';
 
 class ShoppingCard extends StatefulWidget {
   const ShoppingCard({super.key});
+  
 
   @override
   State<ShoppingCard> createState() => _ShoppingCardState();
 }
 
 class _ShoppingCardState extends State<ShoppingCard> {
+
+
   @override
   Widget build(BuildContext context) {
     return Column(children: [
