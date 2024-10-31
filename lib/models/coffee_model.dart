@@ -4,7 +4,7 @@ class CoffeeModel{
   String coffeeDesc;
   String price;
    
-  CoffeeModel(
+  CoffeeModel( 
     {
       required this.image,
       required this.coffeeType,

@@ -1,10 +1,10 @@
 import 'package:coffee_app/constants/color.dart';
 import 'package:coffee_app/constants/size.dart';
+import 'package:coffee_app/models/coffee_model.dart';
 import 'package:flutter/material.dart';
 
 class CoffeeCard extends StatelessWidget {
   const CoffeeCard({super.key});
-
   
 
   @override
