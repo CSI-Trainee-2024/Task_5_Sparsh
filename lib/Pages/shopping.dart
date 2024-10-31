@@ -12,6 +12,8 @@ class Shopping extends StatefulWidget {
   State<Shopping> createState() => _HomeState();
 }
 
+bool isChecked = false;
+
 class _HomeState extends State<Shopping> {
   @override
   Widget build(BuildContext context) {
@@ -36,12 +38,17 @@ class _HomeState extends State<Shopping> {
           color: plateColor,
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              child: Icon(Icons.check_box),
-            ),
-            SizedBox(
-              width: screenWidth * 0.02,
+            Checkbox(value: isChecked, onChanged: (value){
+              setState(() {
+                isChecked = value!;
+              });
+            },
+            materialTapTargetSize:MaterialTapTargetSize.shrinkWrap,
+                        splashRadius: 1,
+                        visualDensity: VisualDensity.compact,
+                        
             ),
             Container(
                 height: screenWidth * 0.25,
@@ -56,47 +63,39 @@ class _HomeState extends State<Shopping> {
             SizedBox(
               width: screenWidth * 0.05,
             ),
-
-            Column(
-              children: [
-                Text("Expresso"),
-                // SizedBox(
-                //   height: screenHeight*0.02,
-                // ),
-                Text("with milk"),
-                 SizedBox(
-                  height: screenHeight*0.02,
-                ),
-                Text("\$4.20")
-              ],
-
+            Flexible(
+              child: Column(
+                children: [
+                  Text("Expresso"),
+                  // SizedBox(
+                  //   height: screenHeight*0.02,
+                  // ),
+                  Text("with milk"),
+                  SizedBox(
+                    height: screenHeight * 0.02,
+                  ),
+                  Text("\$4.20")
+                ],
+              ),
             ),
-
-             SizedBox(
-              width: screenWidth * 0.05,
+            SizedBox(
+              width: screenWidth * 0.02,
             ),
-
-            Column(
-              children: [
-                IconButton(onPressed: (){}, icon: const Icon(Icons.add)),
-                SizedBox(
-                  height: 3,
-                ),
-                Text("2"),
-                SizedBox(
-                  height: 3,
-                ),
-                IconButton(onPressed: (){}, icon: const Icon(Icons.remove))
-
-
-
-              ],
+            Flexible(
+              child: Column(
+                children: [
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
+                  SizedBox(
+                    height: 3,
+                  ),
+                  Text("2"),
+                  SizedBox(
+                    height: 3,
+                  ),
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.remove))
+                ],
+              ),
             )
-            
-            
-            
-
-
           ],
         ),
       )
