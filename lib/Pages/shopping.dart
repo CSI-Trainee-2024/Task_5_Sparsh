@@ -15,6 +15,21 @@ class Shopping extends StatefulWidget {
 class _HomeState extends State<Shopping> {
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text("Shopping"),);
+    return Container(
+      color: Colors.red,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "Cart",
+            style: TextStyle(fontSize: 20),
+          ),
+          // Container(
+            // color: Colors.green,
+          // )
+        ],
+      ),
+
+    );
   }
 }

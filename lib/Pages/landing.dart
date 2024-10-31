@@ -44,11 +44,20 @@ class _LandingState extends State<Landing> {
       appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.transparent,
-          leading: Padding(
+          leading:
+           selectedIndex ==2 ? Padding(
+            padding:  EdgeInsets.only(left: screenWidth * 0.1),
+            child: IconButton(onPressed: (){setState(() {
+              selectedIndex = 0;
+            });}, icon: const Icon(Icons.arrow_back))
+          ) : Padding(
             padding:  EdgeInsets.only(left: screenWidth * 0.1),
             child: const Icon(Icons.menu),
           ),
-          actions: [
+          actions:  [selectedIndex ==2 ? Padding(
+              padding: EdgeInsets.only(right: screenWidth * 0.1),
+              child: const Icon(Icons.delete),
+            ):
             Padding(
               padding: EdgeInsets.only(right: screenWidth * 0.1),
               child: const Icon(Icons.person),
