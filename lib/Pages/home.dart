@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:coffee_app/Pages/shopping.dart';
+import 'package:coffee_app/constants/coffees.dart';
 import 'package:coffee_app/constants/color.dart';
 import 'package:coffee_app/constants/size.dart';
 import 'package:coffee_app/models/coffee_model.dart';
@@ -17,23 +18,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List<CoffeeModel> coffees = [
-    CoffeeModel(
-        image: "assets/coffee.jpg",
-        coffeeType: "Expresso",
-        coffeeDesc: "With milk",
-        price: "\$4.20"),
-    CoffeeModel(
-        image: "assets/coffee.jpg",
-        coffeeType: "Expresso",
-        coffeeDesc: "With milk",
-        price: "\$4.20"),
-    CoffeeModel(
-        image: "assets/coffee.jpg",
-        coffeeType: "Expresso",
-        coffeeDesc: "With milk",
-        price: "\$4.20")
-  ];
 
   List<String> coffeeTypes = ["Espresso", "Latte", "Cappuccino", "Cafetiere"];
   int selectedCoffeeType = 0;
@@ -135,20 +119,21 @@ class _HomeState extends State<Home> {
                   },
                   itemCount: coffeeTypes.length),
             ),
+            SizedBox(height: screenHeight * 0.02),
             Container(
               height: screenHeight * 0.29,
               child: ListView.separated(
                   // shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    return CoffeeCard();
+                    return CoffeeCard(coffeeModel: coffees[index],);
                   },
                   separatorBuilder: (context, index) {
                     return SizedBox(
                       width: screenWidth * 0.08,
                     );
                   },
-                  itemCount: 10),
+                  itemCount: coffees.length),
             ),
             SizedBox(
               height: screenHeight * 0.05,
@@ -174,8 +159,9 @@ class _HomeState extends State<Home> {
                       width: screenWidth * 0.4,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
+                          color: plateColor.withOpacity(0.1),
                           image: DecorationImage(
-                              image: AssetImage("assets/coffee.jpg")))),
+                              image: NetworkImage("https://static.toiimg.com/thumb/msid-112525506,width-1070,height-580,imgsize-1776962,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg"),fit: BoxFit.cover))),
                   SizedBox(width: screenWidth * 0.05),
                   Flexible(
                       child: Text(

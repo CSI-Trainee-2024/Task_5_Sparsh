@@ -4,7 +4,9 @@ import 'package:coffee_app/models/coffee_model.dart';
 import 'package:flutter/material.dart';
 
 class CoffeeCard extends StatelessWidget {
-  const CoffeeCard({super.key});
+  CoffeeCard({super.key,  required this.coffeeModel});
+
+  CoffeeModel coffeeModel;
   
 
   @override
@@ -23,22 +25,22 @@ class CoffeeCard extends StatelessWidget {
               height: screenWidth * 0.3,
               width: screenWidth * 0.3,
               decoration: BoxDecoration(
-                  color: Colors.green,
+                  color: brownColor.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(20),
                   image: DecorationImage(
-                      image: AssetImage("assets/coffee.jpg"))),
+                      image: NetworkImage(coffeeModel.image),fit: BoxFit.cover)),
               // child: Image.asset("assets/coffee.jpg")
             ),
             SizedBox(height: screenHeight * 0.01),
-            Text("Expresso"),
-            Text("With Oat Milk"),
+            Text(coffeeModel.coffeeType),
+            Text(coffeeModel.coffeeDesc),
             SizedBox(
               height: screenHeight * 0.01,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("\$4.20"),
+                Text(coffeeModel.price),
                 Container(
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
