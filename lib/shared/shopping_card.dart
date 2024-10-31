@@ -2,9 +2,12 @@ import 'package:coffee_app/Pages/shopping.dart';
 import 'package:coffee_app/constants/color.dart';
 import 'package:coffee_app/constants/size.dart';
 import 'package:flutter/material.dart';
+import 'package:coffee_app/models/coffee_model.dart';
+
 
 class ShoppingCard extends StatefulWidget {
-  const ShoppingCard({super.key});
+  ShoppingCard({super.key,required this.coffeeModel});
+  CoffeeModel coffeeModel;
   
 
   @override
@@ -12,8 +15,6 @@ class ShoppingCard extends StatefulWidget {
 }
 
 class _ShoppingCardState extends State<ShoppingCard> {
-
-
   @override
   Widget build(BuildContext context) {
     return Column(children: [
@@ -45,7 +46,7 @@ class _ShoppingCardState extends State<ShoppingCard> {
                     color: plateColor.withOpacity(0.1),
                     image: DecorationImage(
                         image: NetworkImage(
-                            "https://static.toiimg.com/thumb/msid-112525506,width-1070,height-580,imgsize-1776962,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg"),
+                            widget.coffeeModel.image),
                         fit: BoxFit.cover))),
             SizedBox(
               width: screenWidth * 0.05,
@@ -53,15 +54,15 @@ class _ShoppingCardState extends State<ShoppingCard> {
             Flexible(
               child: Column(
                 children: [
-                  Text("Expresso"),
+                  Text(widget.coffeeModel.coffeeType),
                   // SizedBox(
                   //   height: screenHeight*0.02,
                   // ),
-                  Text("with milk"),
+                  Text(widget.coffeeModel.coffeeDesc),
                   SizedBox(
                     height: screenHeight * 0.02,
                   ),
-                  Text("\$4.20")
+                  Text(widget.coffeeModel.price)
                 ],
               ),
             ),
@@ -89,3 +90,4 @@ class _ShoppingCardState extends State<ShoppingCard> {
     ]);;
   }
 }
+
