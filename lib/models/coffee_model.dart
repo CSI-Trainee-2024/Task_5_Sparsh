@@ -3,6 +3,7 @@ class CoffeeModel{
   String coffeeType;
   String coffeeDesc;
   String price;
+  bool isChecked;
    
   CoffeeModel( 
     {
@@ -10,6 +11,7 @@ class CoffeeModel{
       required this.coffeeType,
       required this.coffeeDesc,
       required this.price,
+      this.isChecked =false,
     }
   );
 
