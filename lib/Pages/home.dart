@@ -1,17 +1,14 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:coffee_app/Pages/shopping.dart';
 import 'package:coffee_app/constants/coffees.dart';
 import 'package:coffee_app/constants/color.dart';
 import 'package:coffee_app/constants/size.dart';
-import 'package:coffee_app/models/coffee_model.dart';
 import 'package:coffee_app/shared/coffee_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key});
+  const Home({super.key });
 
   @override
   State<Home> createState() => _HomeState();
@@ -79,7 +76,7 @@ class _HomeState extends State<Home> {
             SizedBox(
               height: screenHeight * 0.05,
             ),
-            Container(
+            SizedBox(
               height: screenHeight * 0.05,
               child: ListView.separated(
                   scrollDirection: Axis.horizontal,
@@ -90,27 +87,25 @@ class _HomeState extends State<Home> {
                             selectedCoffeeType = index;
                           });
                         },
-                        child: Container(
-                          child: Column(children: [
-                            Text(coffeeTypes[index],
-                                style: TextStyle(
-                                    color: selectedCoffeeType == index
-                                        ? brownColor
-                                        : whiteColor,
-                                    fontWeight: FontWeight.bold)),
-                            SizedBox(height: 5),
-                            selectedCoffeeType == index
-                                ? Container(
-                                    width: 10,
-                                    height: 10,
-                                    decoration: BoxDecoration(
-                                        color: brownColor,
-                                        borderRadius:
-                                            BorderRadius.circular(100)),
-                                  )
-                                : Container()
-                          ]),
-                        ));
+                        child: Column(children: [
+                          Text(coffeeTypes[index],
+                              style: TextStyle(
+                                  color: selectedCoffeeType == index
+                                      ? brownColor
+                                      : whiteColor,
+                                  fontWeight: FontWeight.bold)),
+                          SizedBox(height: 5),
+                          selectedCoffeeType == index
+                              ? Container(
+                                  width: 10,
+                                  height: 10,
+                                  decoration: BoxDecoration(
+                                      color: brownColor,
+                                      borderRadius:
+                                          BorderRadius.circular(100)),
+                                )
+                              : Container()
+                        ]));
                   },
                   separatorBuilder: (context, index) {
                     return SizedBox(
@@ -120,13 +115,13 @@ class _HomeState extends State<Home> {
                   itemCount: coffeeTypes.length),
             ),
             SizedBox(height: screenHeight * 0.02),
-            Container(
+            SizedBox(
               height: screenHeight * 0.29,
               child: ListView.separated(
                   // shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    return CoffeeCard(coffeeModel: coffees[index],);
+                    return CoffeeCard(coffeeModel: coffees[index]);
                   },
                   separatorBuilder: (context, index) {
                     return SizedBox(

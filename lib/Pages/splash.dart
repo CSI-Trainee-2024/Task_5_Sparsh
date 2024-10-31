@@ -2,7 +2,6 @@ import 'package:coffee_app/constants/color.dart';
 import 'package:coffee_app/Pages/landing.dart';
 import 'package:coffee_app/constants/size.dart';
 import 'package:flutter/material.dart';
-import 'home.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -56,7 +55,7 @@ class _SplashState extends State<Splash> {
                   // );
                   Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(
-                      builder: (context) => Landing(),
+                      builder: (context) => const Landing(),
                     ),
                     (Route<dynamic> route) => false,
                   );

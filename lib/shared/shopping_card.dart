@@ -1,26 +1,22 @@
-import 'package:coffee_app/Pages/shopping.dart';
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'package:coffee_app/constants/color.dart';
 import 'package:coffee_app/constants/size.dart';
 import 'package:flutter/material.dart';
 import 'package:coffee_app/models/coffee_model.dart';
 
+class ShoppingCard extends StatelessWidget {
+  const ShoppingCard(
+      {super.key, required this.coffeeModel, required this.onValueChanged});
+  final CoffeeModel coffeeModel;
+  final onValueChanged;
 
-class ShoppingCard extends StatefulWidget {
-  ShoppingCard({super.key,required this.coffeeModel});
-  CoffeeModel coffeeModel;
-  
-
-  @override
-  State<ShoppingCard> createState() => _ShoppingCardState();
-}
-
-class _ShoppingCardState extends State<ShoppingCard> {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
       Container(
         width: screenWidth * 0.8,
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
           color: plateColor,
@@ -28,15 +24,12 @@ class _ShoppingCardState extends State<ShoppingCard> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Checkbox(value: isChecked, onChanged: (value){
-              setState(() {
-                isChecked = value!;
-              });
-            },
-            materialTapTargetSize:MaterialTapTargetSize.shrinkWrap,
-                        splashRadius: 1,
-                        visualDensity: VisualDensity.compact,
-                        
+            Checkbox(
+              value: coffeeModel.isChecked,
+              onChanged: onValueChanged,
+              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              splashRadius: 1,
+              visualDensity: VisualDensity.compact,
             ),
             Container(
                 height: screenWidth * 0.25,
@@ -45,8 +38,7 @@ class _ShoppingCardState extends State<ShoppingCard> {
                     borderRadius: BorderRadius.circular(20),
                     color: plateColor.withOpacity(0.1),
                     image: DecorationImage(
-                        image: NetworkImage(
-                            widget.coffeeModel.image),
+                        image: NetworkImage(coffeeModel.image),
                         fit: BoxFit.cover))),
             SizedBox(
               width: screenWidth * 0.05,
@@ -54,15 +46,15 @@ class _ShoppingCardState extends State<ShoppingCard> {
             Flexible(
               child: Column(
                 children: [
-                  Text(widget.coffeeModel.coffeeType),
+                  Text(coffeeModel.coffeeType),
                   // SizedBox(
                   //   height: screenHeight*0.02,
                   // ),
-                  Text(widget.coffeeModel.coffeeDesc),
+                  Text(coffeeModel.coffeeDesc),
                   SizedBox(
                     height: screenHeight * 0.02,
                   ),
-                  Text(widget.coffeeModel.price)
+                  Text(coffeeModel.price)
                 ],
               ),
             ),
@@ -73,13 +65,9 @@ class _ShoppingCardState extends State<ShoppingCard> {
               child: Column(
                 children: [
                   IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
-                  SizedBox(
-                    height: 3,
-                  ),
-                  Text("2"),
-                  SizedBox(
-                    height: 3,
-                  ),
+                  const SizedBox(height: 3),
+                  const Text("2"),
+                  const SizedBox(height: 3),
                   IconButton(onPressed: () {}, icon: const Icon(Icons.remove))
                 ],
               ),
@@ -87,7 +75,6 @@ class _ShoppingCardState extends State<ShoppingCard> {
           ],
         ),
       )
-    ]);;
+    ]);
   }
 }
-

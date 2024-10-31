@@ -13,7 +13,7 @@ List<CoffeeModel> coffees = [
         price: "\$4.20"),
     CoffeeModel(
         image: "https://www.vegrecipesofindia.com/wp-content/uploads/2018/02/cafe-style-hot-coffee-recipe-1.jpg",
-        coffeeType: "Cuppucino",
+        coffeeType: "Expresso",
         coffeeDesc: "With milk",
         price: "\$4.20")
   ];

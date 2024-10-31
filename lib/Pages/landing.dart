@@ -22,17 +22,16 @@ class _LandingState extends State<Landing> {
   _updateIndex(int i){
     setState(() {
       selectedIndex = i;
-      print(selectedIndex);
     });
   }
 
   _getBody(){
     switch (selectedIndex){
-      case 0: return Home();
-      case 1: return Favourite();
-      case 2: return Shopping();
-      case 3: return Notifications();
-      case 4: return Profile();
+      case 0: return const Home();
+      case 1: return const Favourite();
+      case 2: return const Shopping();
+      case 3: return const Notifications();
+      case 4: return const Profile();
 
     }
   }
@@ -80,28 +79,28 @@ class _LandingState extends State<Landing> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.favorite,
-              color: brownColor,
+             color: selectedIndex == 1 ? whiteColor :  brownColor,
             ),
             label: "",
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.shop,
-              color: brownColor,
+              color: selectedIndex == 2 ? whiteColor :  brownColor,
             ),
             label: "",
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.notifications,
-              color: brownColor,
+              color: selectedIndex == 3 ? whiteColor :  brownColor,
             ),
             label: "",
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.person,
-              color: brownColor,
+              color: selectedIndex == 4 ? whiteColor :  brownColor,
             ),
             label: "",
           ),
