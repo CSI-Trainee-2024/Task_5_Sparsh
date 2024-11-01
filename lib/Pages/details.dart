@@ -31,7 +31,7 @@ class _DetailsState extends State<Details> {
                   child: Stack(children: [
                     Container(
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20)  ,bottomRight: Radius.circular(20) ),
                           image: DecorationImage(
                             image: NetworkImage(
                                 "https://img.freepik.com/premium-photo/cup-latte-art-is-shown-with-coffee-beans_1271802-14957.jpg?semt=ais_hybrid"),
@@ -45,6 +45,7 @@ class _DetailsState extends State<Details> {
                           padding: EdgeInsets.only(left: screenWidth * 0.1),
                           child: IconButton(
                               onPressed: () {
+                                Navigator.pop(context);
                                 setState(() {});
                               },
                               icon: const Icon(Icons.arrow_back))),
@@ -154,18 +155,15 @@ class _DetailsState extends State<Details> {
                                 child: Container(
                                   padding: EdgeInsets.all(10),
                                   decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: brownColor
-                                    ),
-                                    borderRadius: BorderRadius.circular(10),
-                                    // color: Colors.red,
-                                    color: selectedChocolateType == index?
-                                    brownColor: Colors.transparent
-                                  ),
+                                      border: Border.all(color: brownColor),
+                                      borderRadius: BorderRadius.circular(10),
+                                      // color: Colors.red,
+                                      color: selectedChocolateType == index
+                                          ? brownColor
+                                          : Colors.transparent),
                                   child: Text(
                                     chocolatesType[index],
                                   ),
-                                  
                                 ),
                               );
                             },
@@ -175,6 +173,121 @@ class _DetailsState extends State<Details> {
                               );
                             },
                             itemCount: chocolatesType.length),
+                      ),
+                      SizedBox(
+                        height: screenHeight * 0.02,
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Size",
+                                style: TextStyle(fontSize: 15),
+                              ),
+                              SizedBox(
+                                height: screenHeight * 0.02,
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.all(10),
+                                    height: screenHeight * 0.05,
+                                    width: screenHeight * 0.05,
+                                    decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(100),
+                                        color: brownColor),
+                                    child: Text(
+                                      "S",
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: screenWidth * 0.02,
+                                  ),
+                                  Container(
+                                    padding: EdgeInsets.all(10),
+                                    height: screenHeight * 0.05,
+                                    width: screenHeight * 0.05,
+                                    decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(100),
+                                        color: brownColor),
+                                    child: Text(
+                                      "M",
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: screenWidth * 0.02,
+                                  ),
+                                  Container(
+                                    padding: EdgeInsets.all(10),
+                                    height: screenHeight * 0.05,
+                                    width: screenHeight * 0.05,
+                                    decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(100),
+                                        color: brownColor),
+                                    child: Text(
+                                      "L",
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: screenHeight * 0.02,
+                          ),
+                          Column(
+                            children: [
+                              Text(
+                                "Quantity",
+                                style: TextStyle(fontSize: 15),
+                              ),
+                              SizedBox(
+                                height: screenHeight * 0.02,
+                              ),
+                              Row(
+                                children: [
+                                    Container(
+                                    alignment: Alignment.center,
+                                    height: screenHeight * 0.05,
+                                    width: screenHeight * 0.05,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(100),
+                                        color: brownColor),
+                                    child: Icon((Icons.add))),
+                                    SizedBox(
+                                    width: screenWidth * 0.03,
+                                  ),
+                                
+                              Text("2", style: TextStyle(fontSize: 15)),
+                              SizedBox(
+                                    width: screenWidth * 0.03,
+                                  ),
+
+                              Container(
+                                    alignment: Alignment.center,
+                                    height: screenHeight * 0.05,
+                                    width: screenHeight * 0.05,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(100),
+                                        color: brownColor),
+                                    child: Icon((Icons.remove))),
+
+                                ],
+                              )
+                               
+                            ],
+                          )
+                        ],
                       )
                     ],
                   ),

@@ -56,7 +56,7 @@ class _SplashState extends State<Splash> {
                   // );
                   Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(
-                      builder: (context) => const Details(),
+                      builder: (context) => const Landing(),
                     ),
                     (Route<dynamic> route) => false,
                   );

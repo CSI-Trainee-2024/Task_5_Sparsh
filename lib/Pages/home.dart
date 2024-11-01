@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:coffee_app/Pages/details.dart';
 import 'package:coffee_app/constants/coffees.dart';
 import 'package:coffee_app/constants/color.dart';
 import 'package:coffee_app/constants/size.dart';
@@ -122,7 +123,16 @@ class _HomeState extends State<Home> {
                   itemBuilder: (context, index) {
                     if (coffees[index].coffeeType ==
                         coffeeTypes[selectedCoffeeType]) {
-                      return CoffeeCard(coffeeModel: coffees[index]);
+                      return GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => const Details(),
+                              ),
+                              
+                            );
+                          },
+                          child: CoffeeCard(coffeeModel: coffees[index]));
                     }
                     return Container();
                   },
