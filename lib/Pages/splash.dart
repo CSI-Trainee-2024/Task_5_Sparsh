@@ -1,3 +1,4 @@
+import 'package:coffee_app/Pages/details.dart';
 import 'package:coffee_app/constants/color.dart';
 import 'package:coffee_app/Pages/landing.dart';
 import 'package:coffee_app/constants/size.dart';
@@ -55,7 +56,7 @@ class _SplashState extends State<Splash> {
                   // );
                   Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(
-                      builder: (context) => const Landing(),
+                      builder: (context) => const Details(),
                     ),
                     (Route<dynamic> route) => false,
                   );
