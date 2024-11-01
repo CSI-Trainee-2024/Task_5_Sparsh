@@ -3,7 +3,7 @@ import 'package:coffee_app/models/coffee_model.dart';
 List<CoffeeModel> coffees = [
     CoffeeModel(
         image: "https://img.freepik.com/premium-photo/cup-latte-art-is-shown-with-coffee-beans_1271802-14957.jpg?semt=ais_hybrid",
-        coffeeType: "Expresso",
+        coffeeType: "Espresso",
         coffeeDesc: "With milk",
         price: "\$4.20"),
     CoffeeModel(
@@ -13,7 +13,7 @@ List<CoffeeModel> coffees = [
         price: "\$4.20"),
     CoffeeModel(
         image: "https://www.vegrecipesofindia.com/wp-content/uploads/2018/02/cafe-style-hot-coffee-recipe-1.jpg",
-        coffeeType: "Expresso",
+        coffeeType: "Espresso",
         coffeeDesc: "With milk",
         price: "\$4.20")
   ];

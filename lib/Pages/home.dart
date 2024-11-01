@@ -8,14 +8,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key });
+  const Home({super.key});
 
   @override
   State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-
   List<String> coffeeTypes = ["Espresso", "Latte", "Cappuccino", "Cafetiere"];
   int selectedCoffeeType = 0;
 
@@ -77,43 +76,43 @@ class _HomeState extends State<Home> {
               height: screenHeight * 0.05,
             ),
             SizedBox(
-              height: screenHeight * 0.05,
-              child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            selectedCoffeeType = index;
-                          });
-                        },
-                        child: Column(children: [
-                          Text(coffeeTypes[index],
-                              style: TextStyle(
-                                  color: selectedCoffeeType == index
-                                      ? brownColor
-                                      : whiteColor,
-                                  fontWeight: FontWeight.bold)),
-                          SizedBox(height: 5),
-                          selectedCoffeeType == index
-                              ? Container(
-                                  width: 10,
-                                  height: 10,
-                                  decoration: BoxDecoration(
-                                      color: brownColor,
-                                      borderRadius:
-                                          BorderRadius.circular(100)),
-                                )
-                              : Container()
-                        ]));
-                  },
-                  separatorBuilder: (context, index) {
-                    return SizedBox(
-                      width: screenWidth * 0.06,
-                    );
-                  },
-                  itemCount: coffeeTypes.length),
-            ),
+                height: screenHeight * 0.05,
+                child: ListView.separated(
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              selectedCoffeeType = index;
+                              // coffeeTypes[index]=coffees[index].coffeeType;
+                            });
+                          },
+                          child: Column(children: [
+                            Text(coffeeTypes[index],
+                                style: TextStyle(
+                                    color: selectedCoffeeType == index
+                                        ? brownColor
+                                        : whiteColor,
+                                    fontWeight: FontWeight.bold)),
+                            SizedBox(height: 5),
+                            selectedCoffeeType == index
+                                ? Container(
+                                    width: 10,
+                                    height: 10,
+                                    decoration: BoxDecoration(
+                                        color: brownColor,
+                                        borderRadius:
+                                            BorderRadius.circular(100)),
+                                  )
+                                : Container()
+                          ]));
+                    },
+                    separatorBuilder: (context, index) {
+                      return SizedBox(
+                        width: screenWidth * 0.06,
+                      );
+                    },
+                    itemCount: coffeeTypes.length)),
             SizedBox(height: screenHeight * 0.02),
             SizedBox(
               height: screenHeight * 0.29,
@@ -121,12 +120,18 @@ class _HomeState extends State<Home> {
                   // shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    return CoffeeCard(coffeeModel: coffees[index]);
+                    if (coffees[index].coffeeType ==
+                        coffeeTypes[selectedCoffeeType]) {
+                      return CoffeeCard(coffeeModel: coffees[index]);
+                    }
+                    return Container();
                   },
                   separatorBuilder: (context, index) {
-                    return SizedBox(
-                      width: screenWidth * 0.08,
-                    );
+                    if (coffees[index].coffeeType ==
+                        coffeeTypes[selectedCoffeeType]) {
+                      return SizedBox(width: screenWidth * 0.08);
+                    }
+                    return Container();
                   },
                   itemCount: coffees.length),
             ),
@@ -156,7 +161,9 @@ class _HomeState extends State<Home> {
                           borderRadius: BorderRadius.circular(20),
                           color: plateColor.withOpacity(0.1),
                           image: DecorationImage(
-                              image: NetworkImage("https://static.toiimg.com/thumb/msid-112525506,width-1070,height-580,imgsize-1776962,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg"),fit: BoxFit.cover))),
+                              image: NetworkImage(
+                                  "https://static.toiimg.com/thumb/msid-112525506,width-1070,height-580,imgsize-1776962,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg"),
+                              fit: BoxFit.cover))),
                   SizedBox(width: screenWidth * 0.05),
                   Flexible(
                       child: Text(
