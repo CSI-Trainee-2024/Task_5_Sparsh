@@ -7,9 +7,11 @@ import 'package:coffee_app/models/coffee_model.dart';
 
 class ShoppingCard extends StatelessWidget {
   const ShoppingCard(
-      {super.key, required this.coffeeModel, required this.onValueChanged});
+      {super.key, required this.coffeeModel, required this.onValueChanged , required this.increment, required this.decrement});
   final CoffeeModel coffeeModel;
   final onValueChanged;
+  final increment;
+  final decrement;
 
   @override
   Widget build(BuildContext context) {
@@ -64,11 +66,11 @@ class ShoppingCard extends StatelessWidget {
             Flexible(
               child: Column(
                 children: [
-                  IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
+                  IconButton(onPressed: increment, icon: const Icon(Icons.add)),
                   const SizedBox(height: 3),
-                  const Text("2"),
+                  Text(coffeeModel.quantity.toString()),
                   const SizedBox(height: 3),
-                  IconButton(onPressed: () {}, icon: const Icon(Icons.remove))
+                  IconButton(onPressed: decrement, icon: const Icon(Icons.remove))
                 ],
               ),
             )
