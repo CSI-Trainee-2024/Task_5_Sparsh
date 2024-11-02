@@ -1,11 +1,9 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
 import 'package:coffee_app/constants/color.dart';
-import 'package:coffee_app/constants/shopping_cart.dart';
 import 'package:coffee_app/constants/size.dart';
 import 'package:coffee_app/models/cart_model.dart';
 import 'package:flutter/material.dart';
-import 'package:coffee_app/models/coffee_model.dart';
 
 class ShoppingCard extends StatelessWidget {
   const ShoppingCard(
@@ -52,9 +50,7 @@ class ShoppingCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(cartModel.coffeeType),
-                  // SizedBox(
-                  //   height: screenHeight*0.02,
-                  // ),
+                  
                   Text(cartModel.coffeeMake),
                   SizedBox(
                     height: screenHeight * 0.02,

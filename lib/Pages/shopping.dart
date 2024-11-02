@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:coffee_app/constants/coffees.dart';
 import 'package:coffee_app/constants/shopping_cart.dart';
-import 'package:coffee_app/models/coffee_model.dart';
 import 'package:coffee_app/shared/shopping_card.dart';
 import 'package:flutter/material.dart';
 
@@ -46,7 +44,7 @@ class _HomeState extends State<Shopping> {
                   });
                 } , decrement: (){
                   setState(() {
-                    cart[index].quantity--;
+                    cart[index].quantity==1?"":cart[index].quantity--;
                   });
                 },
               );

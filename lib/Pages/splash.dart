@@ -1,4 +1,3 @@
-import 'package:coffee_app/Pages/details.dart';
 import 'package:coffee_app/constants/color.dart';
 import 'package:coffee_app/Pages/landing.dart';
 import 'package:coffee_app/constants/size.dart';
@@ -49,12 +48,15 @@ class _SplashState extends State<Splash> {
               GestureDetector(
                 onTap: () {
                   
-                  Navigator.of(context).pushAndRemoveUntil(
-                    MaterialPageRoute(
-                      builder: (context) => const Landing(),
-                    ),
-                    (Route<dynamic> route) => false,
-                  );
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Landing()));
+
+
+                  // Navigator.of(context).pushAndRemoveUntil(
+                  //   MaterialPageRoute(
+                  //     builder: (context) => const Landing(),
+                  //   ),
+                  //   (Route<dynamic> route) => false,
+                  // );
                 },
                 child: Container(
                   alignment: Alignment.center,
@@ -81,7 +83,7 @@ class _SplashState extends State<Splash> {
                         SizedBox(
                           width: screenWidth *0.01,
                         ),
-                        Icon(Icons.arrow_forward)
+                        const Icon(Icons.arrow_forward)
                     ]
                   ),
                       

@@ -105,9 +105,6 @@ class _LandingState extends State<Landing> {
             label: "",
           ),
         ],
-        // onTap: (int index) {
-        //   this.onTapHandler(index);
-        // },
       ),
     ));
   }
