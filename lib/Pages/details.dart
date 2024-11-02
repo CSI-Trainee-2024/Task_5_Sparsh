@@ -178,52 +178,75 @@ class _DetailsState extends State<Details> {
                             SizedBox(height: screenHeight * 0.02),
                             Row(
                               children: [
-                                Container(
-                                  alignment: Alignment.center,
-                                  
-                                  height: screenWidth * 0.12,
-                                  width: screenWidth * 0.12,
-                                  decoration: BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.circular(100),
-                                      color: brownColor),
-                                  child: Text(
-                                    "S",
-                                    textAlign: TextAlign.center,
+                                GestureDetector(
+                                  onTap: (){
+                                    setState(() {
+                                      selectedSize = "S";
+                                    });
+                                  },
+                                  child: Container(
+                                    alignment: Alignment.center,
+                                    
+                                    height: screenWidth * 0.12,
+                                    width: screenWidth * 0.12,
+                                    decoration: BoxDecoration(
+                                       border: Border.all(color: brownColor),
+                                        borderRadius:
+                                            BorderRadius.circular(100),
+                                        color :selectedSize == "S" ? brownColor : Colors.transparent ),
+                                    child: Text(
+                                      "S",
+                      
+                                    ),
                                   ),
                                 ),
                                 SizedBox(
                                   width: screenWidth * 0.04,
                                 ),
-                                Container(
-                                  alignment: Alignment.center,
-                                  
-                                   height: screenWidth * 0.12,
-                                  width: screenWidth * 0.12,
-                                  decoration: BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.circular(100),
-                                      color: brownColor),
-                                  child: Text(
-                                    "M",
-                                    textAlign: TextAlign.center,
+                                GestureDetector(
+                                  onTap: (){
+                                    setState(() {
+                                      selectedSize = "M";
+                                    });
+                                  },
+                                  child: Container(
+                                    alignment: Alignment.center,
+                                    
+                                     height: screenWidth * 0.12,
+                                    width: screenWidth * 0.12,
+                                    decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(100),
+                                            border: Border.all(color: brownColor),
+                                        color:selectedSize == "M" ? brownColor : Colors.transparent),
+                                    child: Text(
+                                      "M",
+                                      
+                                    ),
                                   ),
                                 ),
                                 SizedBox(
                                   width: screenWidth * 0.04,
                                 ),
-                                Container(
-                                  alignment: Alignment.center,
-                                
-                                   height: screenWidth * 0.12,
-                                  width: screenWidth * 0.12,
-                                  decoration: BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.circular(100),
-                                      color: brownColor),
-                                  child: Text(
-                                    "L",
-                                    textAlign: TextAlign.center,
+                                GestureDetector(
+                                  onTap: (){
+                                    setState(() {
+                                      selectedSize = "L";
+                                    });
+                                  },
+                                  child: Container(
+                                    alignment: Alignment.center,
+                                  
+                                     height: screenWidth * 0.12,
+                                    width: screenWidth * 0.12,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(color: brownColor),
+                                        borderRadius:
+                                            BorderRadius.circular(100),
+                                        color: selectedSize == "L" ? brownColor : Colors.transparent),
+                                    child: Text(
+                                      "L",
+                                    ),
                                   ),
                                 ),
                               ],
@@ -244,15 +267,22 @@ class _DetailsState extends State<Details> {
                             ),
                             Row(
                               children: [
-                                Container(
-                                    alignment: Alignment.center,
-                                     height: screenWidth * 0.12,
-                                  width: screenWidth * 0.12,
-                                    decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(100),
-                                        color: brownColor),
-                                    child: Icon((Icons.add))),
+                                GestureDetector(
+                                  onTap: (){
+                                    setState(() {
+                                      quantity++;
+                                    });
+                                  },
+                                  child: Container(
+                                      alignment: Alignment.center,
+                                       height: screenWidth * 0.12,
+                                    width: screenWidth * 0.12,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(100),
+                                          color: brownColor),
+                                      child: Icon((Icons.add))),
+                                ),
                                 SizedBox(
                                   width: screenWidth * 0.03,
                                 ),
@@ -260,15 +290,22 @@ class _DetailsState extends State<Details> {
                                 SizedBox(
                                   width: screenWidth * 0.03,
                                 ),
-                                Container(
-                                    alignment: Alignment.center,
-                                    height: screenWidth * 0.12,
-                                  width: screenWidth * 0.12,
-                                    decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(100),
-                                        color: brownColor),
-                                    child: Icon((Icons.remove))),
+                                GestureDetector(
+                                  onTap: (){
+                                    setState(() {
+                                      quantity--;
+                                    });
+                                  },
+                                  child: Container(
+                                      alignment: Alignment.center,
+                                      height: screenWidth * 0.12,
+                                    width: screenWidth * 0.12,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(100),
+                                          color: brownColor),
+                                      child: Icon((Icons.remove))),
+                                ),
                               ],
                             )
                           ],
