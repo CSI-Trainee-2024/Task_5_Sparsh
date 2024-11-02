@@ -1,8 +1,13 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:ui';
+
 import 'package:coffee_app/constants/color.dart';
+import 'package:coffee_app/constants/shopping_cart.dart';
 import 'package:coffee_app/constants/size.dart';
+import 'package:coffee_app/models/cart_model.dart';
 import 'package:coffee_app/models/coffee_model.dart';
+import 'package:coffee_app/shared/shopping_card.dart';
 import 'package:flutter/material.dart';
 
 class Details extends StatefulWidget {
@@ -64,49 +69,53 @@ class _DetailsState extends State<Details> {
                   ),
                   Positioned(
                     bottom: 0,
-                    child: Container(
-                      padding: EdgeInsets.all(20),
-                      width: screenWidth,
-                      // height: screenHeight * 0.2,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: plateColor.withOpacity(0.5),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                widget.coffeeModel.coffeeType,
-                                style: TextStyle(fontSize: 20),
-                              ),
-                              SizedBox(
-                                height: screenHeight * 0.01,
-                              ),
-                              Text(
-                                widget.coffeeModel.coffeeMake,
-                                style: TextStyle(fontSize: 15),
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            width: 40,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Text(widget.coffeeModel.coffeName),
-                              SizedBox(
-                                height: screenHeight * 0.01,
-                              ),
-                              Text(widget.coffeeModel.rosted)
-                            ],
-                          )
-                        ],
+                    height: screenHeight * 0.15,
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                      child: Container(
+                        padding: EdgeInsets.all(20),
+                        width: screenWidth,
+                        // height: screenHeight * 0.2,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: plateColor.withOpacity(0.5),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  widget.coffeeModel.coffeeType,
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                                SizedBox(
+                                  height: screenHeight * 0.01,
+                                ),
+                                Text(
+                                  widget.coffeeModel.coffeeMake,
+                                  style: TextStyle(fontSize: 15),
+                                )
+                              ],
+                            ),
+                            SizedBox(
+                              width: 40,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Text(widget.coffeeModel.coffeName),
+                                SizedBox(
+                                  height: screenHeight * 0.01,
+                                ),
+                                Text(widget.coffeeModel.rosted)
+                              ],
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -122,7 +131,7 @@ class _DetailsState extends State<Details> {
                       style: TextStyle(fontSize: 20),
                     ),
                     SizedBox(height: screenHeight * 0.02),
-                    // Text(widget.coffeeModel.coffeeDesc),
+                    Text(widget.coffeeModel.coffeeDesc),
                     SizedBox(height: screenHeight * 0.02),
                     Text(
                       "Choice of Chocolates",
@@ -282,7 +291,7 @@ class _DetailsState extends State<Details> {
                                           borderRadius:
                                               BorderRadius.circular(100),
                                           color: brownColor),
-                                      child: Icon((Icons.add))),
+                                      child: Icon((Icons.remove))),
                                 ),
                                 SizedBox(
                                   width: screenWidth * 0.03,
@@ -306,7 +315,7 @@ class _DetailsState extends State<Details> {
                                           borderRadius:
                                               BorderRadius.circular(100),
                                           color: brownColor),
-                                      child: Icon((Icons.remove))),
+                                      child: Icon((Icons.add))),
                                 ),
                               ],
                             )
@@ -318,12 +327,16 @@ class _DetailsState extends State<Details> {
                       height: screenHeight * 0.02,
                     ),
                     Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Price",style: TextStyle(fontSize: 15),),
+                            Text(
+                              "Price",
+                              style: TextStyle(fontSize: 15),
+                            ),
                             SizedBox(height: screenHeight * 0.02),
                             Text(
                                 "\$ ${(widget.coffeeModel.price * quantity).toStringAsFixed(2)}",
@@ -331,21 +344,26 @@ class _DetailsState extends State<Details> {
                                     fontSize: 25, fontWeight: FontWeight.bold))
                           ],
                         ),
-                        Container(
-                        padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-                          decoration: BoxDecoration(
-                            
-                            borderRadius: BorderRadius.circular(30),
-                            color:brownColor
-                          
-
+                        GestureDetector(
+                          onTap: () {
+                            cart.add(CartModel(
+                                imageUrl: widget.coffeeModel.imageUrl,
+                                coffeeType: widget.coffeeModel.coffeeType,
+                                coffeeMake: widget.coffeeModel.coffeeMake,
+                                price: widget.coffeeModel.price,
+                                size: selectedSize,
+                                quantity: quantity));
+                                Navigator.pop(context);
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 25, vertical: 10),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                color: brownColor),
+                            child: Text("Add to Cart"),
                           ),
-                          child: Text("BUY NOW"),
-                          
-                          
-                          
                         ),
-                      
                       ],
                     )
                   ],

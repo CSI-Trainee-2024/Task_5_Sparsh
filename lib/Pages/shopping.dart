@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:coffee_app/constants/coffees.dart';
+import 'package:coffee_app/constants/shopping_cart.dart';
 import 'package:coffee_app/models/coffee_model.dart';
 import 'package:coffee_app/shared/shopping_card.dart';
 import 'package:flutter/material.dart';
@@ -31,45 +32,32 @@ class _HomeState extends State<Shopping> {
             shrinkWrap: true,
             itemBuilder: (context, index) {
               return ShoppingCard(
-                coffeeModel: coffees[index],
+                cartModel: cart[index],
                 onValueChanged: (value)
                 
                 
                  {
-                  // setState(() {
-                  //   coffees[index].isChecked = value;
-                  // });
+                  setState(() {
+                    cart[index].isChecked = value;
+                  });
                 }, increment: (){
-                  // setState(() {
-                  //   coffees[index].quantity++;
-                  // });
+                  setState(() {
+                    cart[index].quantity++;
+                  });
                 } , decrement: (){
-                  // setState(() {
-                  //   coffees[index].quantity--;
-                  // });
+                  setState(() {
+                    cart[index].quantity--;
+                  });
                 },
               );
             },
             separatorBuilder: (context, index) {
               return SizedBox(height: 20);
             },
-            itemCount: coffees.length,
+            itemCount: cart.length,
           )
 
-          // Container(
-          //   child: ListView.separated(
-          //       physics: NeverScrollableScrollPhysics(),
-          //       shrinkWrap: true,
-          //       itemBuilder: (context, index) {
-          //                           return ShoppingCard(coffeeModel: coffees[index]);
-          //       },
-          //       separatorBuilder: (context, index) {
-          //         return SizedBox(
-          //           height: 20,
-          //         );
-          //       },
-          //       itemCount: coffees.length),
-          // ),
+          
         ],
       ),
     );

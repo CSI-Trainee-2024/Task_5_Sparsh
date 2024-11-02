@@ -1,14 +1,16 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
 import 'package:coffee_app/constants/color.dart';
+import 'package:coffee_app/constants/shopping_cart.dart';
 import 'package:coffee_app/constants/size.dart';
+import 'package:coffee_app/models/cart_model.dart';
 import 'package:flutter/material.dart';
 import 'package:coffee_app/models/coffee_model.dart';
 
 class ShoppingCard extends StatelessWidget {
   const ShoppingCard(
-      {super.key, required this.coffeeModel, required this.onValueChanged , required this.increment, required this.decrement});
-  final CoffeeModel coffeeModel;
+      {super.key, required this.cartModel, required this.onValueChanged , required this.increment, required this.decrement});
+  final CartModel cartModel;
   final onValueChanged;
   final increment;
   final decrement;
@@ -27,7 +29,7 @@ class ShoppingCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Checkbox(
-              value: false,
+              value: cartModel.isChecked,
               onChanged: onValueChanged,
               materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
               splashRadius: 1,
@@ -40,7 +42,7 @@ class ShoppingCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     color: plateColor.withOpacity(0.1),
                     image: DecorationImage(
-                        image: NetworkImage(coffeeModel.imageUrl),
+                        image: NetworkImage(cartModel.imageUrl),
                         fit: BoxFit.cover))),
             SizedBox(
               width: screenWidth * 0.05,
@@ -49,15 +51,15 @@ class ShoppingCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(coffeeModel.coffeeType),
+                  Text(cartModel.coffeeType),
                   // SizedBox(
                   //   height: screenHeight*0.02,
                   // ),
-                  Text(coffeeModel.coffeeMake),
+                  Text(cartModel.coffeeMake),
                   SizedBox(
                     height: screenHeight * 0.02,
                   ),
-                  Text(coffeeModel.price.toString())
+                  Text("\$ ${(cartModel.price * cartModel.quantity).toStringAsFixed(2)}")
                 ],
               ),
             ),
@@ -69,7 +71,7 @@ class ShoppingCard extends StatelessWidget {
                 children: [
                   IconButton(onPressed: increment, icon: const Icon(Icons.add)),
                   const SizedBox(height: 3),
-                  Text(""),
+                  Text(cartModel.quantity.toString()),
                   const SizedBox(height: 3),
                   IconButton(onPressed: decrement, icon: const Icon(Icons.remove))
                 ],

@@ -3,7 +3,7 @@ class CartModel {
   bool isChecked;
   String coffeeType;
   String coffeeMake;
-  String price;
+  double price;
   int quantity;
   String size;
 

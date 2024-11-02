@@ -23,9 +23,9 @@ class _SplashState extends State<Splash> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Image.network("https://img.freepik.com/premium-photo/cup-latte-art-is-shown-with-coffee-beans_1271802-14957.jpg?semt=ais_hybrid"),
+              Image.asset("assets/coffee.png"),
               Column(
-          
+              
                 children: [
                   Text(
                     "Stay Focused",
@@ -38,10 +38,11 @@ class _SplashState extends State<Splash> {
                     height: screenHeight * 0.02,
                   ),
                   Text(
-                      "Get the cup filled of your choice to stay focused and awake. Diffrent type of coffee menu, hot lottee cappucino",
+                      "Get the cup filled of your choice to stay focused and awake. Diffrent type of coffee menu, hot lottee cappucino",textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: screenWidth * 0.05,
                         color: greyColor,
+                        
                       ))
                 ],
               ),
@@ -57,13 +58,24 @@ class _SplashState extends State<Splash> {
                 },
                 child: Container(
                   alignment: Alignment.center,
-                  width: screenWidth * 0.9,
+                  width: screenWidth * 0.5,
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                       color: brownColor,
-                      borderRadius: BorderRadius.circular(10)),
-                  child: const Text("Dive in ",
-                      style: TextStyle(fontSize: 20, color: Colors.white)),
+                      borderRadius: BorderRadius.circular(30),
+                                   
+                      ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [const Text("Dive In ",
+                        style: TextStyle(fontSize: 20, color: Colors.white)),
+                        SizedBox(
+                          width: screenWidth *0.01,
+                        ),
+                        Icon(Icons.arrow_forward)
+                    ]
+                  ),
+                      
                 ),
               )
             ],
