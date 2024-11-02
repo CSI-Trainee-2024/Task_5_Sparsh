@@ -27,7 +27,7 @@ class ShoppingCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Checkbox(
-              value: coffeeModel.isChecked,
+              value: false,
               onChanged: onValueChanged,
               materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
               splashRadius: 1,
@@ -40,7 +40,7 @@ class ShoppingCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     color: plateColor.withOpacity(0.1),
                     image: DecorationImage(
-                        image: NetworkImage(coffeeModel.image),
+                        image: NetworkImage(coffeeModel.imageUrl),
                         fit: BoxFit.cover))),
             SizedBox(
               width: screenWidth * 0.05,
@@ -68,7 +68,7 @@ class ShoppingCard extends StatelessWidget {
                 children: [
                   IconButton(onPressed: increment, icon: const Icon(Icons.add)),
                   const SizedBox(height: 3),
-                  Text(coffeeModel.quantity.toString()),
+                  Text(""),
                   const SizedBox(height: 3),
                   IconButton(onPressed: decrement, icon: const Icon(Icons.remove))
                 ],

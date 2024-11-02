@@ -85,7 +85,6 @@ class _HomeState extends State<Home> {
                           onTap: () {
                             setState(() {
                               selectedCoffeeType = index;
-                              // coffeeTypes[index]=coffees[index].coffeeType;
                             });
                           },
                           child: Column(children: [
@@ -118,7 +117,6 @@ class _HomeState extends State<Home> {
             SizedBox(
               height: screenHeight * 0.29,
               child: ListView.separated(
-                  // shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
                     if (coffees[index].coffeeType ==
@@ -127,9 +125,10 @@ class _HomeState extends State<Home> {
                           onTap: () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => const Details(),
+                                builder: (context) => Details(
+                                  coffeeModel: coffees[index],
+                                ),
                               ),
-                              
                             );
                           },
                           child: CoffeeCard(coffeeModel: coffees[index]));

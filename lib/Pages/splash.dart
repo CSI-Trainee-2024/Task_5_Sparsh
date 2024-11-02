@@ -23,7 +23,7 @@ class _SplashState extends State<Splash> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Image.asset("assets/coffee.jpg"),
+              Image.network("https://img.freepik.com/premium-photo/cup-latte-art-is-shown-with-coffee-beans_1271802-14957.jpg?semt=ais_hybrid"),
               Column(
           
                 children: [

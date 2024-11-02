@@ -28,12 +28,12 @@ class CoffeeCard extends StatelessWidget {
                   color: brownColor.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(20),
                   image: DecorationImage(
-                      image: NetworkImage(coffeeModel.image),fit: BoxFit.cover)),
+                      image: NetworkImage(coffeeModel.imageUrl),fit: BoxFit.cover)),
               // child: Image.asset("assets/coffee.jpg")
             ),
             SizedBox(height: screenHeight * 0.01),
             Text(coffeeModel.coffeeType),
-            Text(coffeeModel.coffeeDesc),
+            Text(coffeeModel.coffeeMake),
             SizedBox(
               height: screenHeight * 0.01,
             ),

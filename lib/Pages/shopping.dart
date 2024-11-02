@@ -36,17 +36,17 @@ class _HomeState extends State<Shopping> {
                 
                 
                  {
-                  setState(() {
-                    coffees[index].isChecked = value;
-                  });
+                  // setState(() {
+                  //   coffees[index].isChecked = value;
+                  // });
                 }, increment: (){
-                  setState(() {
-                    coffees[index].quantity++;
-                  });
+                  // setState(() {
+                  //   coffees[index].quantity++;
+                  // });
                 } , decrement: (){
-                  setState(() {
-                    coffees[index].quantity--;
-                  });
+                  // setState(() {
+                  //   coffees[index].quantity--;
+                  // });
                 },
               );
             },

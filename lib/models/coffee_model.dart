@@ -1,23 +1,18 @@
-class CoffeeModel{
-  String image;
+class CoffeeModel {
+  String imageUrl;
   String coffeeType;
   String coffeeDesc;
+  String coffeeMake;
+  String coffeName;
+  String rosted;
   String price;
-  bool isChecked;
-  int quantity;
-   
-  CoffeeModel( 
-    {
-      required this.image,
+
+  CoffeeModel(
+      {required this.imageUrl,
       required this.coffeeType,
       required this.coffeeDesc,
       required this.price,
-      this.isChecked =false,
-      this.quantity = 0,
-    }
-  );
-
-
-
+      required this.coffeName,
+      required this.coffeeMake,
+      required this.rosted});
 }
-
