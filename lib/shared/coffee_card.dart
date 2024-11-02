@@ -21,15 +21,18 @@ class CoffeeCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              height: screenWidth * 0.3,
-              width: screenWidth * 0.3,
-              decoration: BoxDecoration(
-                  color: brownColor.withOpacity(0.1),
-                  borderRadius: BorderRadius.circular(20),
-                  image: DecorationImage(
-                      image: NetworkImage(coffeeModel.imageUrl),fit: BoxFit.cover)),
-              // child: Image.asset("assets/coffee.jpg")
+            Hero(
+              tag: coffeeModel.imageUrl,
+              child: Container(
+                height: screenWidth * 0.3,
+                width: screenWidth * 0.3,
+                decoration: BoxDecoration(
+                    color: brownColor.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(20),
+                    image: DecorationImage(
+                        image: NetworkImage(coffeeModel.imageUrl),fit: BoxFit.cover)),
+              
+              ),
             ),
             SizedBox(height: screenHeight * 0.01),
             Text(coffeeModel.coffeeType),

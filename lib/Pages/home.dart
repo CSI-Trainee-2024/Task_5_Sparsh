@@ -46,7 +46,6 @@ class _HomeState extends State<Home> {
                         ),
                         fillColor: fillColor,
                         filled: true,
-                        // focusColor: Colors.green,
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20.0),
                         ),
@@ -123,17 +122,11 @@ class _HomeState extends State<Home> {
                         coffeeTypes[selectedCoffeeType]) {
                       return GestureDetector(
                           onTap: () {
-
-                             Navigator.push(context, MaterialPageRoute(builder: (context) => Details(coffeeModel: coffees[index])));
-
-
-                            // Navigator.of(context).push(
-                            //   MaterialPageRoute(
-                            //     builder: (context) => Details(
-                            //       coffeeModel: coffees[index],
-                            //     ),
-                            //   ),
-                            // );
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        Details(coffeeModel: coffees[index])));
                           },
                           child: CoffeeCard(coffeeModel: coffees[index]));
                     }

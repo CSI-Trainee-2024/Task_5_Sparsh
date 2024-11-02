@@ -37,15 +37,18 @@ class _DetailsState extends State<Details> {
               SizedBox(
                 height: screenHeight * 0.5,
                 child: Stack(children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(20),
-                            bottomRight: Radius.circular(20)),
-                        image: DecorationImage(
-                          image: NetworkImage(widget.coffeeModel.imageUrl),
-                          fit: BoxFit.cover,
-                        )),
+                  Hero(
+                    tag: widget.coffeeModel.imageUrl,
+                    child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(20),
+                              bottomRight: Radius.circular(20)),
+                          image: DecorationImage(
+                            image: NetworkImage(widget.coffeeModel.imageUrl),
+                            fit: BoxFit.cover,
+                          )),
+                    ),
                   ),
                   AppBar(
                     elevation: 0,
@@ -53,6 +56,7 @@ class _DetailsState extends State<Details> {
                     leading: Padding(
                         padding: EdgeInsets.only(left: screenWidth * 0.1),
                         child: IconButton(
+                          iconSize: 30,
                             onPressed: () {
                               Navigator.pop(context);
                             },
@@ -60,7 +64,7 @@ class _DetailsState extends State<Details> {
                     actions: [
                       Padding(
                         padding: EdgeInsets.only(right: screenWidth * 0.1),
-                        child: const Icon(Icons.favorite),
+                        child: const Icon(Icons.favorite,size: 30,),
                       )
                     ],
                   ),
