@@ -63,6 +63,15 @@ class _SplashState extends State<Splash> {
                   decoration: BoxDecoration(
                       color: brownColor,
                       borderRadius: BorderRadius.circular(30),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: brownColor,
+                          spreadRadius: -2,
+                          blurRadius: 8,
+                          offset: Offset(0.0, 5.0),
+
+                        )
+                      ]
                                    
                       ),
                   child: Row(
