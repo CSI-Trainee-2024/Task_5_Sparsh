@@ -47,13 +47,7 @@ class _SplashState extends State<Splash> {
               ),
               GestureDetector(
                 onTap: () {
-                  // Navigator.pushAndRemoveUntil(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //     builder: (context) => const HomePage(),
-                  //     (Route<dynamic> route) => false
-                  //   )
-                  // );
+                  
                   Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(
                       builder: (context) => const Landing(),

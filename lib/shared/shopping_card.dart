@@ -47,12 +47,13 @@ class ShoppingCard extends StatelessWidget {
             ),
             Flexible(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(coffeeModel.coffeeType),
                   // SizedBox(
                   //   height: screenHeight*0.02,
                   // ),
-                  Text(coffeeModel.coffeeDesc),
+                  Text(coffeeModel.coffeeMake),
                   SizedBox(
                     height: screenHeight * 0.02,
                   ),
