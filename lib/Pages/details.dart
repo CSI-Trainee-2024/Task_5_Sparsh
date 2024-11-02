@@ -20,8 +20,8 @@ class _DetailsState extends State<Details> {
     "Milk chocolate",
     "Dark chocolate"
   ];
-  String selectedSize =  "S";
-  int quantity = 0;
+  String selectedSize = "S";
+  int quantity = 1;
   int selectedChocolateType = 0;
 
   @override
@@ -179,24 +179,24 @@ class _DetailsState extends State<Details> {
                             Row(
                               children: [
                                 GestureDetector(
-                                  onTap: (){
+                                  onTap: () {
                                     setState(() {
                                       selectedSize = "S";
                                     });
                                   },
                                   child: Container(
                                     alignment: Alignment.center,
-                                    
                                     height: screenWidth * 0.12,
                                     width: screenWidth * 0.12,
                                     decoration: BoxDecoration(
-                                       border: Border.all(color: brownColor),
+                                        border: Border.all(color: brownColor),
                                         borderRadius:
                                             BorderRadius.circular(100),
-                                        color :selectedSize == "S" ? brownColor : Colors.transparent ),
+                                        color: selectedSize == "S"
+                                            ? brownColor
+                                            : Colors.transparent),
                                     child: Text(
                                       "S",
-                      
                                     ),
                                   ),
                                 ),
@@ -204,24 +204,24 @@ class _DetailsState extends State<Details> {
                                   width: screenWidth * 0.04,
                                 ),
                                 GestureDetector(
-                                  onTap: (){
+                                  onTap: () {
                                     setState(() {
                                       selectedSize = "M";
                                     });
                                   },
                                   child: Container(
                                     alignment: Alignment.center,
-                                    
-                                     height: screenWidth * 0.12,
+                                    height: screenWidth * 0.12,
                                     width: screenWidth * 0.12,
                                     decoration: BoxDecoration(
                                         borderRadius:
                                             BorderRadius.circular(100),
-                                            border: Border.all(color: brownColor),
-                                        color:selectedSize == "M" ? brownColor : Colors.transparent),
+                                        border: Border.all(color: brownColor),
+                                        color: selectedSize == "M"
+                                            ? brownColor
+                                            : Colors.transparent),
                                     child: Text(
                                       "M",
-                                      
                                     ),
                                   ),
                                 ),
@@ -229,21 +229,22 @@ class _DetailsState extends State<Details> {
                                   width: screenWidth * 0.04,
                                 ),
                                 GestureDetector(
-                                  onTap: (){
+                                  onTap: () {
                                     setState(() {
                                       selectedSize = "L";
                                     });
                                   },
                                   child: Container(
                                     alignment: Alignment.center,
-                                  
-                                     height: screenWidth * 0.12,
+                                    height: screenWidth * 0.12,
                                     width: screenWidth * 0.12,
                                     decoration: BoxDecoration(
-                                      border: Border.all(color: brownColor),
+                                        border: Border.all(color: brownColor),
                                         borderRadius:
                                             BorderRadius.circular(100),
-                                        color: selectedSize == "L" ? brownColor : Colors.transparent),
+                                        color: selectedSize == "L"
+                                            ? brownColor
+                                            : Colors.transparent),
                                     child: Text(
                                       "L",
                                     ),
@@ -268,15 +269,15 @@ class _DetailsState extends State<Details> {
                             Row(
                               children: [
                                 GestureDetector(
-                                  onTap: (){
+                                  onTap: () {
                                     setState(() {
                                       quantity++;
                                     });
                                   },
                                   child: Container(
                                       alignment: Alignment.center,
-                                       height: screenWidth * 0.12,
-                                    width: screenWidth * 0.12,
+                                      height: screenWidth * 0.12,
+                                      width: screenWidth * 0.12,
                                       decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(100),
@@ -286,12 +287,13 @@ class _DetailsState extends State<Details> {
                                 SizedBox(
                                   width: screenWidth * 0.03,
                                 ),
-                                Text(quantity.toString(), style: TextStyle(fontSize: 15)),
+                                Text(quantity.toString(),
+                                    style: TextStyle(fontSize: 15)),
                                 SizedBox(
                                   width: screenWidth * 0.03,
                                 ),
                                 GestureDetector(
-                                  onTap: (){
+                                  onTap: () {
                                     setState(() {
                                       quantity--;
                                     });
@@ -299,7 +301,7 @@ class _DetailsState extends State<Details> {
                                   child: Container(
                                       alignment: Alignment.center,
                                       height: screenWidth * 0.12,
-                                    width: screenWidth * 0.12,
+                                      width: screenWidth * 0.12,
                                       decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(100),
@@ -311,10 +313,44 @@ class _DetailsState extends State<Details> {
                           ],
                         )
                       ],
+                    ),
+                    SizedBox(
+                      height: screenHeight * 0.02,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("Price",style: TextStyle(fontSize: 15),),
+                            SizedBox(height: screenHeight * 0.02),
+                            Text(
+                                "\$ ${(widget.coffeeModel.price * quantity).toStringAsFixed(2)}",
+                                style: TextStyle(
+                                    fontSize: 25, fontWeight: FontWeight.bold))
+                          ],
+                        ),
+                        Container(
+                        padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                          decoration: BoxDecoration(
+                            
+                            borderRadius: BorderRadius.circular(30),
+                            color:brownColor
+                          
+
+                          ),
+                          child: Text("BUY NOW"),
+                          
+                          
+                          
+                        ),
+                      
+                      ],
                     )
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),

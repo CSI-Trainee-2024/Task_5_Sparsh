@@ -7,7 +7,7 @@ List<CoffeeModel> coffees = [
       coffeeType: "Espresso",
       coffeeDesc:
           "Espresso is a delicious concentrated form of coffee, served in shots. It's often the coffee base of many other beverages, such as cappuccino, latte, americano and macchiato. An espresso is intense and bold, but nonetheless delicious, and usually served in small demitasse-style cups for this reason.",
-      price: "\$4.20",
+      price: 4.20,
       coffeName: "Chocolate Coffee",
       coffeeMake: "With Milk",
       rosted: "Medium Rosted"),
@@ -17,7 +17,7 @@ List<CoffeeModel> coffees = [
       coffeeType: "Espresso",
       coffeeDesc:
           "Espresso is a delicious concentrated form of coffee, served in shots. It's often the coffee base of many other beverages, such as cappuccino, latte, americano and macchiato. An espresso is intense and bold, but nonetheless delicious, and usually served in small demitasse-style cups for this reason.",
-      price: "\$5.80",
+      price: 5.80,
       coffeName: "Chocolate Coffee",
       coffeeMake: "With Oat Milk",
       rosted: "Light Rosted"),
@@ -27,7 +27,7 @@ List<CoffeeModel> coffees = [
       coffeeType: "Espresso",
       coffeeDesc:
           "Espresso is a delicious concentrated form of coffee, served in shots. It's often the coffee base of many other beverages, such as cappuccino, latte, americano and macchiato. An espresso is intense and bold, but nonetheless delicious, and usually served in small demitasse-style cups for this reason.",
-      price: "\$9.80",
+      price: 9.80,
       coffeName: "Chocolate Coffee",
       coffeeMake: "With Almond Milk",
       rosted: "Medium Rosted"),
@@ -37,7 +37,7 @@ List<CoffeeModel> coffees = [
       coffeeType: "Latte",
       coffeeDesc:
           "A latte or cafè latte is a milk coffee that boasts a silky layer of foam as a real highlight of the drink. A true latte will be made of one or two shots of espresso, steamed milk and a final, thin layer of frothed milk on top.",
-      price: "\$7.20",
+      price: 7.20,
       coffeName: "Chocolate Coffee",
       coffeeMake: "With Almond Milk",
       rosted: "Medium Rosted"),
@@ -47,7 +47,7 @@ List<CoffeeModel> coffees = [
       coffeeType: "Latte",
       coffeeDesc:
           "A latte or cafè latte is a milk coffee that boasts a silky layer of foam as a real highlight of the drink. A true latte will be made of one or two shots of espresso, steamed milk and a final, thin layer of frothed milk on top.",
-      price: "\$5.20",
+      price: 5.20,
       coffeName: "Chocolate Coffee",
       coffeeMake: "With Milk",
       rosted: "Medium Rosted"),
@@ -57,7 +57,7 @@ List<CoffeeModel> coffees = [
       coffeeType: "Latte",
       coffeeDesc:
           "A latte or cafè latte is a milk coffee that boasts a silky layer of foam as a real highlight of the drink. A true latte will be made of one or two shots of espresso, steamed milk and a final, thin layer of frothed milk on top.",
-      price: "\$5.80",
+      price: 5.80,
       coffeName: "Chocolate Coffee",
       coffeeMake: "With Oat Milk",
       rosted: "High Rosted"),
@@ -67,7 +67,7 @@ List<CoffeeModel> coffees = [
       coffeeType: "Cappuccino",
       coffeeDesc:
           "A cappuccino is a beloved espresso-based hot coffee drink made with layering of espresso, steamed milk, and milk foam on top. The taste of cappuccinos can be described as creamy, smooth, and balanced. The combination of flavors and textures creates a delightful and comforting experience for many coffee enthusiasts.",
-      price: "\$5.80",
+      price: 5.80,
       coffeName: "Chocolate Coffee",
       coffeeMake: "With Oat Milk",
       rosted: "High Rosted"),
@@ -77,7 +77,7 @@ List<CoffeeModel> coffees = [
       coffeeType: "Cappuccino",
       coffeeDesc:
           "A cappuccino is a beloved espresso-based hot coffee drink made with layering of espresso, steamed milk, and milk foam on top. The taste of cappuccinos can be described as creamy, smooth, and balanced. The combination of flavors and textures creates a delightful and comforting experience for many coffee enthusiasts.",
-      price: "\$8.80",
+      price: 8.80,
       coffeName: "Chocolate Coffee",
       coffeeMake: "With Almond Milk",
       rosted: "Medium Rosted"),
@@ -87,7 +87,7 @@ List<CoffeeModel> coffees = [
       coffeeType: "Cappuccino",
       coffeeDesc:
           "A cappuccino is a beloved espresso-based hot coffee drink made with layering of espresso, steamed milk, and milk foam on top. The taste of cappuccinos can be described as creamy, smooth, and balanced. The combination of flavors and textures creates a delightful and comforting experience for many coffee enthusiasts.",
-      price: "\$3.80",
+      price: 3.80,
       coffeName: "Chocolate Coffee",
       coffeeMake: "With Milk",
       rosted: "Medium Rosted"),
@@ -97,7 +97,7 @@ List<CoffeeModel> coffees = [
       coffeeType: "Cafetiere",
       coffeeDesc:
           "a glass container for making coffee, in which hot water is poured onto coffee and then a filter (= net) is pushed down into the container to keep the solids at the bottom.",
-      price: "\$3.80",
+      price: 3.80,
       coffeName: "Chocolate Coffee",
       coffeeMake: "With Milk",
       rosted: "Medium Rosted"),
@@ -107,7 +107,7 @@ List<CoffeeModel> coffees = [
       coffeeType: "Cafetiere",
       coffeeDesc:
           "a glass container for making coffee, in which hot water is poured onto coffee and then a filter (= net) is pushed down into the container to keep the solids at the bottom.",
-      price: "\$5.80",
+      price: 5.80,
       coffeName: "Chocolate Coffee",
       coffeeMake: "With Oat Milk",
       rosted: "Medium Rosted"),
@@ -117,7 +117,7 @@ List<CoffeeModel> coffees = [
       coffeeType: "Cafetiere",
       coffeeDesc:
           "a glass container for making coffee, in which hot water is poured onto coffee and then a filter (= net) is pushed down into the container to keep the solids at the bottom.",
-      price: "\$9.80",
+      price: 9.80,
       coffeName: "Chocolate Coffee",
       coffeeMake: "With Almond Milk",
       rosted: "Medium Rosted"),

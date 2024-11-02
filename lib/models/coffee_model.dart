@@ -5,7 +5,7 @@ class CoffeeModel {
   String coffeeMake;
   String coffeName;
   String rosted;
-  String price;
+  double price;
 
   CoffeeModel(
       {required this.imageUrl,

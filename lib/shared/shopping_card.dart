@@ -56,7 +56,7 @@ class ShoppingCard extends StatelessWidget {
                   SizedBox(
                     height: screenHeight * 0.02,
                   ),
-                  Text(coffeeModel.price)
+                  Text(coffeeModel.price.toString())
                 ],
               ),
             ),

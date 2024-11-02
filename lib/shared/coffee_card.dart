@@ -40,7 +40,7 @@ class CoffeeCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(coffeeModel.price),
+                Text(coffeeModel.price.toString()),
                 Container(
                   padding: const EdgeInsets.all(10),
                   decoration: const BoxDecoration(
